@@ -11,11 +11,15 @@ if typing.TYPE_CHECKING:
 
 class GhidraArtifactLifter(ArtifactLifter):
     lift_map = {
-        "undefined64": "long long",
-        "undefined32": "int",
-        "undefined16": "short",
-        "undefined8": "char",
-        "undefined": "char",
+        #"undefined64": "long long",
+        #"undefined32": "int",
+        #"undefined16": "short",
+        #"undefined8": "char",
+        #"undefined": "char",
+        "undefined8": "long long",
+        "undefined4": "int",
+        "undefined2": "short",
+        "undefined1": "char",
         "char8": "char[8]",
         "char4": "char[4]",
         "char2": "char[2]",
