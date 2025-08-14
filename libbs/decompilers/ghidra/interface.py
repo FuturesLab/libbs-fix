@@ -414,9 +414,9 @@ class GhidraDecompilerInterface(DecompilerInterface):
         args = {}
         arg_offset = 0
         for arg_idx in range(decompilation.getHighFunction().getLocalSymbolMap().getNumParams()):
-            arg = decompilation.getHighFunction().getLocalSymbolMap().getParam(arg_idx);
+            sym = decompilation.getHighFunction().getLocalSymbolMap().getParamSymbol(arg_idx);
             args[arg_offset] = FunctionArgument(
-                offset=arg_offset, name=str(arg.getName()), type_=str(arg.getDataType().getPathName()), size=int(arg.getSize())
+                offset=arg_offset, name=str(sym.getName()), type_=str(sym.getDataType().getPathName()), size=int(sym.getSize())
             )
             arg_offset += 1
 
